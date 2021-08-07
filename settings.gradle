@@ -8,3 +8,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "CodeLib"
 include ':app'
+include ':tooltips'
+include ':common'

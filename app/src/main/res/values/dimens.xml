@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="grid_2_5">10dp</dimen>
+    <dimen name="grid_1dp">1dp</dimen>
+    <dimen name="grid_1">4dp</dimen>
+    <dimen name="grid_6">24dp</dimen>
+    <dimen name="grid_0_5">2dp</dimen>
+    <dimen name="grid_0_7_5">3dp</dimen>
+    <dimen name="grid_3">12dp</dimen>
+    <dimen name="grid_3_5">14dp</dimen>
+    <dimen name="grid_4">16dp</dimen>
+
+    <dimen name="font_size_14">14sp</dimen>
+</resources>

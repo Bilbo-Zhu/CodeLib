@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">CodeLib</string>
+    <string name="app_name">BaseCodeLib</string>
+    <string name="hello_tooltips">Hello Tooltip!</string>
 </resources>
