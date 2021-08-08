@@ -1,6 +1,5 @@
 package com.jaca.codelib
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
 import com.jaca.codelib.databinding.ActivityMainBinding
