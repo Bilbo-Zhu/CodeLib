@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">BaseCodeLib</string>
+    <string name="app_name">CodeLib</string>
     <string name="hello_tooltips">Hello Tooltip!</string>
+    <string name="hello_rxjava">Hello RxJava!</string>
 </resources>

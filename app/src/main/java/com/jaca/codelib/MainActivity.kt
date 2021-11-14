@@ -1,15 +1,22 @@
 package com.jaca.codelib
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.Gravity
 import com.jaca.codelib.databinding.ActivityMainBinding
+import com.jaca.codelib.rxjava.RxDemoHelper
+import com.jaca.codelib.rxjava.SwitchMapDemo
 import com.jaca.common.base.BindingActivity
 import com.jaca.tooltips.SimpleTooltip
 
 class MainActivity : BindingActivity<ActivityMainBinding>() {
+
+    private lateinit var rxDemoHelper: RxDemoHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initListener()
+        initHelper()
     }
 
     override fun getLayoutResource(): Int = R.layout.activity_main
@@ -18,6 +25,13 @@ class MainActivity : BindingActivity<ActivityMainBinding>() {
         binding.tvTooltips.setOnClickListener {
             showTips()
         }
+        binding.tvRxjava.setOnClickListener {
+            rxDemoHelper.runDemo()
+        }
+    }
+
+    private fun initHelper() {
+        rxDemoHelper = RxDemoHelper()
     }
 
     private fun baseTooltipBuilder() =
