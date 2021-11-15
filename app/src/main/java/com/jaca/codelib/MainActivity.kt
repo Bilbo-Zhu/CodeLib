@@ -1,11 +1,9 @@
 package com.jaca.codelib
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.Gravity
 import com.jaca.codelib.databinding.ActivityMainBinding
 import com.jaca.codelib.rxjava.RxDemoHelper
-import com.jaca.codelib.rxjava.SwitchMapDemo
 import com.jaca.common.base.BindingActivity
 import com.jaca.tooltips.SimpleTooltip
 

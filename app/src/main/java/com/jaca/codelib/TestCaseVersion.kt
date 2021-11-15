@@ -1,5 +1,5 @@
 package com.jaca.codelib
 
 object TestCaseVersion {
-    const val RX_VERSION = 1
+    const val RX_VERSION = 2
 }
