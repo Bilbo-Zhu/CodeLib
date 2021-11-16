@@ -32,4 +32,11 @@ class TransformOperatorsDemo {
         return Observable
             .fromIterable(list).collect({ mutableListOf() }, { list, item -> list.add(item) })
     }
+
+    fun group(list: List<Int>): Observable<MutableList<Int>>? {
+        return Observable
+            .fromIterable(list)
+            .groupBy { it % 3 }
+            .concatMapSingle { it.toList() }
+    }
 }

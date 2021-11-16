@@ -9,7 +9,7 @@ class RxDemoHelper {
     @SuppressLint("CheckResult")
     fun runDemo() {
         val transformOperatorsDemo = TransformOperatorsDemo()
-        val list = listOf(1, 2, 3, 4, 5, 6)
+        val list = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
         when (TestCaseVersion.RX_VERSION) {
             1 -> {
                 transformOperatorsDemo
@@ -32,6 +32,13 @@ class RxDemoHelper {
                     ?.subscribe(Consumer {
                         println(it)
                     })
+            }
+            3 -> {
+                transformOperatorsDemo
+                    .group(list)
+                    ?.subscribe {
+                        println("zjnTest: $it")
+                    }
             }
         }
     }
