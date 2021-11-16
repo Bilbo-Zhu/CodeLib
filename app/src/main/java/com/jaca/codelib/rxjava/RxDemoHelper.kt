@@ -34,10 +34,30 @@ class RxDemoHelper {
                     })
             }
             3 -> {
+                /**
+                 * OutPut:
+                 * zjnTest [1, 4, 7, 10]
+                 * zjnTest [2, 5, 8]
+                 * zjnTest [3, 6, 9]
+                 */
                 transformOperatorsDemo
                     .group(list)
                     ?.subscribe {
                         println("zjnTest: $it")
+                    }
+            }
+            4 -> {
+                /**
+                 * OutPut:
+                 * zjnTest 1
+                 * zjnTest 2
+                 * zjnTest 3
+                 * zjnTest 4
+                 */
+                transformOperatorsDemo
+                    .amb()
+                    .subscribe {
+                        println("zjnTest $it")
                     }
             }
         }

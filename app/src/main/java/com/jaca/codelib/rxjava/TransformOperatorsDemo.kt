@@ -39,4 +39,10 @@ class TransformOperatorsDemo {
             .groupBy { it % 3 }
             .concatMapSingle { it.toList() }
     }
+
+    fun amb(): Observable<Int> {
+        val ob1 = Observable.fromIterable(listOf(1, 2, 3, 4))
+        val ob2 = Observable.fromIterable(listOf(11, 12, 13, 14))
+        return Observable.amb(listOf(ob1, ob2))
+    }
 }
