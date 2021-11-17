@@ -60,6 +60,13 @@ class RxDemoHelper {
                         println("zjnTest $it")
                     }
             }
+            5 -> {
+                /**
+                 * Output: zjnTest 1
+                 * callable中的逻辑发生在订阅之后
+                 */
+                transformOperatorsDemo.fromCallable()
+            }
         }
     }
 }

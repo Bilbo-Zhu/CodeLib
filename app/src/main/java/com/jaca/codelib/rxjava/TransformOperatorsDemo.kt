@@ -5,6 +5,7 @@ import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.BiConsumer
+import io.reactivex.functions.Consumer
 import io.reactivex.schedulers.Schedulers
 import java.util.concurrent.Callable
 
@@ -44,5 +45,15 @@ class TransformOperatorsDemo {
         val ob1 = Observable.fromIterable(listOf(1, 2, 3, 4))
         val ob2 = Observable.fromIterable(listOf(11, 12, 13, 14))
         return Observable.amb(listOf(ob1, ob2))
+    }
+
+    @SuppressLint("CheckResult")
+    fun fromCallable() {
+        var index = 0
+        val fromCallable = Single.fromCallable { index }
+        index += 1
+        fromCallable.subscribe(Consumer<Int> {
+            println("zjnTest $it")
+        })
     }
 }
