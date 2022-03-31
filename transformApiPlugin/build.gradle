@@ -1,0 +1,34 @@
+plugins {
+    id 'groovy'
+    id 'maven-publish'
+}
+
+dependencies {
+    //gradle sdk
+    implementation gradleApi()
+    //groovy sdk
+    implementation localGroovy()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            //定义插件的在本地 maven 中的 id 用于classPath,如下则classpath为："com.zjn:TransformApiPlugin:1.0.1"
+            groupId 'com.zjn'
+            artifactId 'TransformApiPlugin'
+            //定义插件的在本地 maven 中的版本号
+            version '1.0.0'
+
+            from components.java
+
+        }
+    }
+}
+publishing {
+    repositories {
+        maven {
+            // 发布位置 /Users/jianning.zhu/work-place/CodeLib/repo
+            url uri('/Users/jianning.zhu/work-place/plugin-repo')
+        }
+    }
+}

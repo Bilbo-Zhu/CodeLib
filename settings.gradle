@@ -1,5 +1,5 @@
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+//    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
@@ -10,3 +10,4 @@ rootProject.name = "CodeLib"
 include ':app'
 include ':tooltips'
 include ':common'
+include ':transformApiPlugin'
