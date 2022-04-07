@@ -1,7 +1,9 @@
 package com.jaca.codelib
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
+import com.jaca.codelib.bView.BViewActivity
 import com.jaca.codelib.databinding.ActivityMainBinding
 import com.jaca.codelib.rxjava.RxDemoHelper
 import com.jaca.common.base.BindingActivity
@@ -25,6 +27,10 @@ class MainActivity : BindingActivity<ActivityMainBinding>() {
         }
         binding.tvRxjava.setOnClickListener {
             rxDemoHelper.runDemo()
+        }
+
+        binding.tvBview.setOnClickListener {
+            this.startActivity(Intent(this, BViewActivity::class.java))
         }
     }
 
