@@ -1,8 +1,10 @@
 package com.jaca.codelib
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
+import android.widget.Toast
 import com.jaca.codelib.bView.BViewActivity
 import com.jaca.codelib.databinding.ActivityMainBinding
 import com.jaca.codelib.rxjava.RxDemoHelper
@@ -59,4 +61,8 @@ class MainActivity : BindingActivity<ActivityMainBinding>() {
             .build()
             .show()
     }
+}
+
+fun toast(context: Context) {
+    Toast.makeText(context, "我是被插入的Toast", Toast.LENGTH_SHORT).show()
 }

@@ -5,9 +5,8 @@ import com.squareup.javapoet.JavaFile;
 import com.zjn.apt.annotation.BView;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -39,9 +38,7 @@ public class BViewProcessor extends AbstractProcessor {
 
     @Override
     public Set<String> getSupportedAnnotationTypes() {
-        HashSet<String> supportTypes = new LinkedHashSet<>();
-        supportTypes.add(BView.class.getCanonicalName());
-        return supportTypes;
+        return Collections.singleton(BView.class.getCanonicalName());
     }
 
     @Override
@@ -69,21 +66,7 @@ public class BViewProcessor extends AbstractProcessor {
             int id = bindAnnotation.value();
             proxy.putElement(id, variableElement);
         }
-        //通过遍历mProxyMap，创建java文件
-        //通过StringBuilder生成
-        /*for (String key : mProxyMap.keySet()) {
-            ClassCreatorProxy proxyInfo = mProxyMap.get(key);
-            try {
-                JavaFileObject jfo = processingEnv.getFiler().createSourceFile(proxyInfo.getProxyClassFullName(), proxyInfo.getTypeElement());
-                Writer writer = jfo.openWriter();
-                writer.write(proxyInfo.generateJavaCode());
-                writer.flush();
-                writer.close();
-                mMessager.printMessage(Diagnostic.Kind.NOTE, " --> create " + proxyInfo.getProxyClassFullName() + "success");
-            } catch (IOException e) {
-                mMessager.printMessage(Diagnostic.Kind.NOTE, " --> create " + proxyInfo.getProxyClassFullName() + "error");
-            }
-        }*/
+
         //通过javapoet生成
         for (String key : mProxyMap.keySet()) {
             ClassCreatorProxy proxyInfo = mProxyMap.get(key);
